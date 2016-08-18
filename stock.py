@@ -24,7 +24,7 @@ def stockquote(stock):
                         print v[0],v[1],v[2],v[3]  
                 
 con = None
-con = mdb.connect('127.0.0.1', 'root', 'sp6161266', 'short_stocks', charset='utf8')
+con = mdb.connect('127.0.0.1', 'root', '', 'short_stocks', charset='utf8')
 cur = con.cursor()
 cur.execute("select * from stock")
 rows = cur.fetchall()
