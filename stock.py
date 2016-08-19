@@ -3,7 +3,10 @@ import MySQLdb as mdb
 import ystockquote
 
 def stockquote(stock):
-        data = ystockquote.get_historical_prices(stock, '2016-08-16','2016-08-17')
+        try:
+                data = ystockquote.get_historical_prices(stock, '2016-08-17','2016-08-18')
+        except:
+                return
         data = data.items()
         data.sort()
         close = data[0][1]['Close']
